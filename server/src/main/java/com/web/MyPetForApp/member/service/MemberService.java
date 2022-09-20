@@ -50,4 +50,8 @@ public class MemberService {
                 () -> new IllegalArgumentException("회원이 존재하지 않습니다.")
         );
     }
+
+    public Long searchMemberIdByEmail(String email) {
+        return memberRepository.findMemberIdByEmail(email);
+    }
 }
