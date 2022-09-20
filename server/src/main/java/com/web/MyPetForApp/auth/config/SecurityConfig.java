@@ -43,21 +43,21 @@ public class SecurityConfig {
         httpSecurity.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 디폴트인 세션, 쿠키 생성 허용 -> 불허
                 .and()
                 .httpBasic().disable()
-                .apply(new JwtLogin())
-                .and()
-                .addFilterBefore(errorhandlerFilter, JwtAuthorizationFilter.class)
-                .exceptionHandling()
-                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
-                .accessDeniedHandler(jwtAccessDeniedHandler)
-                .and()
+//                .apply(new JwtLogin())
+//                .and()
+//                .addFilterBefore(errorhandlerFilter, JwtAuthorizationFilter.class)
+//                .exceptionHandling()
+//                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+//                .accessDeniedHandler(jwtAccessDeniedHandler)
+//                .and()
                 .authorizeRequests()
 //                .antMatchers("/api/v1/admin/**").access("hasRole('ROLE_ADMIN')")
 //                .antMatchers("/api/v1/user/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-                .anyRequest().permitAll()
-                .and()
-                .logout()
-                .addLogoutHandler(jwtAddLogoutHandler)
-                .logoutSuccessUrl("/api/v1/user/test");
+                .anyRequest().permitAll();
+//                .and()
+//                .logout()
+//                .addLogoutHandler(jwtAddLogoutHandler)
+//                .logoutSuccessUrl("/api/v1/user/test");
         return httpSecurity.build();
     }
 
