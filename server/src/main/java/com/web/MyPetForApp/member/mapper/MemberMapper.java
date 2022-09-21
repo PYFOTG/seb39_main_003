@@ -3,14 +3,14 @@ package com.web.MyPetForApp.member.mapper;
 import com.web.MyPetForApp.member.dto.MemberDto;
 import com.web.MyPetForApp.member.entity.Member;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class MemberMapper {
 
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+//    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public Member memberPostDtoToMember(MemberDto.Post post) {
         return Member.builder()
@@ -18,7 +18,8 @@ public class MemberMapper {
                 .nickName(post.getNickName())
                 .address(post.getAddress())
                 .email(post.getEmail())
-                .password(bCryptPasswordEncoder.encode(post.getPassword()))
+//                .password(bCryptPasswordEncoder.encode(post.getPassword()))
+                .password(post.getPassword())
                 .phone(post.getPhone())
                 .profileImg(post.getProfileImg())
                 .memberRole(Member.MemberRole.ROLE_USER)
@@ -31,7 +32,8 @@ public class MemberMapper {
                 .nickName(patch.getNickName())
                 .profileImg(patch.getProfileImg())
                 .phone(patch.getPhone())
-                .password(bCryptPasswordEncoder.encode(patch.getPassword()))
+//                .password(bCryptPasswordEncoder.encode(patch.getPassword()))
+                .password(patch.getPassword())
                 .address(patch.getAddress())
                 .build();
     }

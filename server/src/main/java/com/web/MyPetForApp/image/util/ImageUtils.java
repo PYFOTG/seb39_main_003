@@ -15,7 +15,7 @@ public class ImageUtils {
 
     public String  createFileName(Long memberId ,String fileName) {
         // 파일 업로드 시, 파일명을 난수화하기 위해 random으로 돌린다.
-        return memberId + "/" + UUID.randomUUID().toString().concat(getFileExtension(fileName));
+        return memberId + "_" + UUID.randomUUID().toString().concat(getFileExtension(fileName));
     }
 
     public String getFileExtension(String fileName) {
@@ -37,7 +37,7 @@ public class ImageUtils {
 
     public static ContentDisposition createContentDisposition(String memberIdWithFileName) {
         String fileName = memberIdWithFileName.substring(
-                memberIdWithFileName.lastIndexOf("/"), memberIdWithFileName.lastIndexOf(".") + 1
+                memberIdWithFileName.lastIndexOf("_"), memberIdWithFileName.lastIndexOf(".") + 1
         );
         return ContentDisposition.builder("attachment")
                 .filename(fileName, StandardCharsets.UTF_8)
