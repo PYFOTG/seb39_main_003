@@ -2,7 +2,7 @@
     <h1>임시 로고 </h1>
 </div>
 <p align="center"> 
-  <img src="https://user-images.githubusercontent.com/101246806/193584741-09a14b95-12b1-44cc-8313-6a84a1914ee4.png" height="300px" width="250px"
+  <img src="https://user-images.githubusercontent.com/101246806/193620269-9c56ef19-36b9-45e6-aaa1-5a244976f34b.png"
 </p>
 <div align=center> 
     <h1> :dog: 멍멍아 야옹해봐 :cat: </h1>
