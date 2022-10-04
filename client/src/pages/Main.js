@@ -154,7 +154,7 @@ function Main() {
     <Wrapper>
 
 <div>
-        <a href='https://shopforourpets.shop:8080/oauth2/authorization/google'>구글 로그인</a>
+        <a href='https://shopforourpets.shop/oauth2/authorization/google'>구글 로그인</a>
     </div>
 
       {/* 캐러셀 컴포넌트 */}
