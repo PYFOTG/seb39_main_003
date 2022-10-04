@@ -31,6 +31,9 @@ import Addproduct from "./pages/Shopping/AddProduct";
 import { useState } from 'react';
 // import FAQPost from "./pages/FAQPost";
 import FAQPost from "./pages/FAQ/FAQPost";
+import FAQPage from "./pages/FAQ/FAQPage";
+import NoticePost from "./pages/Notice/NoticePost";
+import NoticePage from "./pages/Notice/NoticePage";
 
 
 function App() {
@@ -53,8 +56,12 @@ function App() {
                 <Route path="/community" element={<Community />} />
                 <Route path="/notice" element={<Notice />} />
                 <Route path="/FAQ" element={<FAQ />} />
-                <Route path="/FAQ/FAQPOST" element={<FAQPost />} />
-                {/* <Route path="/FAQPOST" element={<FAQPost />} /> */}
+
+                <Route path="/FAQ/FAQPost" element={<FAQPost />} />
+                <Route path="/FAQ/FAQPage/:boardId" element={<FAQPage/>} />
+                
+                <Route path="/notice/noticePost" element={<NoticePost/>} />
+                <Route path="/notice/noticePage/:boardId" element={<NoticePage/>} />
                 
                 <Route path="/mypage" element={sessionStorage.getItem('accessToken') ? <Mypage /> : <SignIn />} />
                 <Route path="/login" element={<SignIn />} />

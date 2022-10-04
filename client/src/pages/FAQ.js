@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import FAQPost from './FAQ/FAQPost';
+import FAQPage from "./FAQ/FAQPage";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -118,7 +119,6 @@ const StyledLink = styled(Link)`
 `;
 
 function FAQ() {
-
   const navigate = useNavigate();
 
   const [list, setList] = useState([]);
@@ -164,19 +164,24 @@ function FAQ() {
 
           {/* <div> */}
 
-          {list && list.map((el, index) => {
+          {list &&
+            list.map((el, index) => {
               return (
-                <div
+                <Link
+                  to={`/FAQ/FAQPage/${el.boardId}`}
                   className="questions"
                   key={index}
-                  onClick={() => {
-                    navigate(`/FAQ/${el.boardId}`);
+                  state={{
+                    id: el.boardId,
                   }}
+                  // onClick={() => {
+                  //   navigate(`/FAQ/FAQPage/${el.boardId}`);
+                  // }}
                 >
                   <span className="article">{el.nickName}</span>
                   <span className="article">{el.title}</span>
                   <span className="article">{el.boardContents}</span>
-                </div>
+                </Link>
               );
             })}
           {/* </div> */}

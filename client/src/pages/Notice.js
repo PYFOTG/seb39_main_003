@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import NoticePost from "./Notice/NoticePost";
+import NoticePage from "./Notice/NoticePage";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -122,7 +122,7 @@ function Notice() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch(`http://211.58.40.128:8080/api/v1/board&tagIds=2`, {
+    fetch(`http://211.58.40.128:8080/api/v1/board?page=1&size=10&tagIds=2`, {
       method: "GET",
       headers: {
         "content-Type": "application/json",
@@ -156,17 +156,21 @@ function Notice() {
           {list &&
             list.map((el, index) => {
               return (
-                <div
+                <Link
+                  to={`/notice/noticePage/${el.boardId}`}
                   className="questions"
                   key={index}
-                  onClick={() => {
-                    navigate(`/notice/${el.boardId}`);
+                  state={{
+                    id: el.boardId,
                   }}
+                  // onClick={() => {
+                  //   navigate(`/notice/noticePost/${el.boardId}`);
+                  // }}
                 >
                   <span className="article">{el.nickName}</span>
                   <span className="article">{el.title}</span>
                   <span className="article">{el.boardContents}</span>
-                </div>
+                </Link>
               );
             })}
           {/* </div> */}

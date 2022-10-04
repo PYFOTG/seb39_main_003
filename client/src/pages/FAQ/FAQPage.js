@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import React from "react";
-import Reply from "./Reply";
+import Reply from "../Community/detail/Reply";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router";
+import { useLocation } from 'react-router';
 
 const Wrapper = styled.div`
   //게시글 확인 화면
@@ -55,26 +55,30 @@ const Wrapper = styled.div`
   }
 `;
 
-function Post() {
-
+function FAQPage() {
+  const navigate = useNavigate();
   const location = useLocation();
 
-  const [communityList, setCommunityList] = useState();
+  console.log(location)
+
+  const [faqList, setFaqList] = useState([]);
 
   useEffect(() => {
     fetch(`http://211.58.40.128:8080/api/v1/board/${location.state.id}`, {
-      method:  "GET",
+      method: "GET",
       headers: {
         "content-Type": "application/json",
       },
+      //get요청이라 body는 필요없어
     })
-    .then((res) => res.json())
-    .then((res) => {
-      setCommunityList(res.data);
-      console.log(res.date);
-    })
-    .catch((err) => console.log(err));
-  })
+      .then((res) => res.json())
+      .then((res) => {
+        setFaqList(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <Wrapper>
       {/* 게시글 확인 화면 */}
@@ -99,9 +103,9 @@ function Post() {
                   className="questions"
                 //   key={index} // 고유번호
                 >
-                  <span className="article">{communityList.nickName}</span>
-                  <span className="article">{communityList.title}</span>
-                  <span className="article">{communityList.boardContents}</span>
+                  <span className="article">{faqList.nickName}</span>
+                  <span className="article">{faqList.title}</span>
+                  <span className="article">{faqList.boardContents}</span>
                 </div>
               {/* ); */}
             {/* })} */}
@@ -114,4 +118,4 @@ function Post() {
   );
 }
 
-export default Post;
+export default FAQPage;
