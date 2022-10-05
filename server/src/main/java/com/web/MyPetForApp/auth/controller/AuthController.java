@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @RestController
 @RequestMapping
@@ -77,8 +81,19 @@ public class AuthController {
 //    }
 
     @GetMapping("/login/oauth2")
-    public String takeRedirect(HttpServletRequest request, HttpServletResponse response) {
+    public void takeRedirect(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("Authorization = " + response.getHeader("Authorization"));
-        return  "리다이렉트 되었다";
+//        RequestDispatcher rd = request.getRequestDispatcher("ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080");
+//
+//        try {
+//            rd.forward(request,response);
+//        } catch (ServletException e) {
+//            throw new RuntimeException(e);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return  "리다이렉트 되었다";
+//        getRedirectStrategy().sendRedirect(request, response, "http://49.165.248.183:3000");
     }
+
 }
