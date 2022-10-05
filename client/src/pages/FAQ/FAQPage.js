@@ -3,7 +3,7 @@ import React from "react";
 import Reply from "../Community/detail/Reply";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router';
+import { useLocation } from "react-router";
 
 const Wrapper = styled.div`
   //게시글 확인 화면
@@ -16,9 +16,9 @@ const Wrapper = styled.div`
     background-color: #f9f9f9;
   }
   .rbackground {
-    flex: auto;
+    display: flex;
   }
-  //게시글 제목
+  /* //게시글 제목
   .cposttop {
     width: 95vw;
     margin-top: 30px;
@@ -52,6 +52,19 @@ const Wrapper = styled.div`
   .cpostcontent {
     text-align: start;
     font-weight: 500;
+  } */
+  //
+  .questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .qtbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -59,7 +72,7 @@ function FAQPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location)
+  console.log(location);
 
   const [faqList, setFaqList] = useState([]);
 
@@ -97,18 +110,20 @@ function FAQPage() {
                 </div> */}
 
           {/* {faqList &&faqList.map((el, index) => { */}
-            
-              {/* return ( */}
-                <div
-                  className="questions"
-                //   key={index} // 고유번호
-                >
-                  <span className="article">{faqList.nickName}</span>
-                  <span className="article">{faqList.title}</span>
-                  <span className="article">{faqList.boardContents}</span>
-                </div>
-              {/* ); */}
-            {/* })} */}
+
+          {/* return ( */}
+          <div
+            className="questions"
+            //   key={index} // 고유번호
+          >
+            <div className="qtbox">
+              <span className="article">{faqList.nickName}</span>
+              <span className="article">{faqList.title}</span>
+            </div>
+            <span className="article">{faqList.boardContents}</span>
+          </div>
+          {/* ); */}
+          {/* })} */}
 
           {/* 댓글 작성란 및 작성된 댓글 목록 */}
           <Reply />
