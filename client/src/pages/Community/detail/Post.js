@@ -57,9 +57,12 @@ const Wrapper = styled.div`
 
 function Post() {
 
+  const navigate = useNavigate();
   const location = useLocation();
 
-  const [communityList, setCommunityList] = useState();
+  console.log(location)
+
+  const [communityList, setCommunityList] = useState([]);
 
   useEffect(() => {
     fetch(`http://211.58.40.128:8080/api/v1/board/${location.state.id}`, {
@@ -74,7 +77,7 @@ function Post() {
       console.log(res.date);
     })
     .catch((err) => console.log(err));
-  })
+  }, []);
   return (
     <Wrapper>
       {/* 게시글 확인 화면 */}

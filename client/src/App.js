@@ -77,7 +77,7 @@ function App() {
                 <Route path="/community/protect" element={<Protect />} />
                 <Route path="/community/lost" element={<Lost />} />
                 <Route path="/community/posting" element={<Posting />}/>
-                <Route path="/community/post/:communityId" element={<Post/>}/>
+                <Route path="/community/post/:boardId" element={<Post/>}/>
 
                 <Route path="/shopping/add" element={<Addproduct />} />
                 <Route path="/shopping/meal" element={<Meal convertPrice={convertPrice} />} />
