@@ -36,10 +36,10 @@ public class CustomOAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHa
         response.addHeader("refresh", "Bearer " + refreshToken);
 //        response.addHeader("Access-Control-Allow-Origin", "*");
 
-//        getRedirectStrategy().sendRedirect(request, response, "http://49.165.248.183:3000");
+        getRedirectStrategy().sendRedirect(request, response, "http://49.165.248.183:3000");
 //        getRedirectStrategy().sendRedirect(request, response, "http://localhost:8080");
 //        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-gamma.vercel.app");
 //        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-gadt7n9o7-nomga.vercel.app");
-        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-kslsp3cga-nomga.vercel.app");
+//        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-kslsp3cga-nomga.vercel.app");
     }
 }
