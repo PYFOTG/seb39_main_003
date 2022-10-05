@@ -1,21 +1,24 @@
-//package com.web.MyPetForApp.auth.controller;
-//
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.http.HttpEntity;
-//import org.springframework.http.HttpHeaders;
-//import org.springframework.http.MediaType;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.web.client.RestTemplate;
-//
-//@RestController
-//@RequestMapping
-//public class AuthController {
-//    private final Logger logger = LoggerFactory.getLogger(AuthController.class);
-//
+package com.web.MyPetForApp.auth.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@RestController
+@RequestMapping
+public class AuthController {
+    private final Logger logger = LoggerFactory.getLogger(AuthController.class);
+
 //    @GetMapping(value = "/oauth/google/login")
 //    public ResponseEntity googleLogin() {
 //
@@ -72,9 +75,10 @@
 ////        String auth = response.getHeaders().getFirst("Authorization");
 ////        System.out.println("auth = " + auth);
 //    }
-//
-//    @GetMapping("/login/oauth2/code/google")
-//    public String  takeRedirect() {
-//        return "리다이렉트 되었다";
-//    }
-//}
+
+    @GetMapping("/login/oauth2")
+    public String takeRedirect(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("Authorization = " + response.getHeader("Authorization"));
+        return  "리다이렉트 되었다";
+    }
+}

@@ -1,5 +1,7 @@
 package com.web.MyPetForApp.auth.handler;
 
+import com.nimbusds.jose.crypto.AESEncrypter;
+import com.nimbusds.jose.crypto.impl.AESCryptoProvider;
 import com.web.MyPetForApp.auth.provider.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -7,6 +9,7 @@ import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,7 +40,10 @@ public class CustomOAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHa
 //        response.addHeader("Access-Control-Allow-Origin", "*");
 
 //        getRedirectStrategy().sendRedirect(request, response, "http://49.165.248.183:3000");
-        getRedirectStrategy().sendRedirect(request, response, "http://localhost:3000");
+//        getRedirectStrategy().sendRedirect(request, response, "/login/oauth2");
+        RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8080");
+        rd.forward(request,response);
+
 //        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-gamma.vercel.app");
 //        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-gadt7n9o7-nomga.vercel.app");
 //        getRedirectStrategy().sendRedirect(request, response, "https://seb39-main-003-kslsp3cga-nomga.vercel.app");
