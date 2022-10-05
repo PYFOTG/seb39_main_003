@@ -149,14 +149,16 @@ function Main() {
   return (
     <Wrapper>
       <div>
-        <a href="https://shopforourpets.shop/oauth2/authorization/google">구글 로그인1</a>
+        <a href="https://shopforourpets.shop:8080/oauth2/authorization/google">구글 로그인</a>
       </div>
       <div>
-        <a href="https://shopforourpets.shop:80/oauth2/authorization/google">구글 로그인2</a>
+        <a href="https://shopforourpets.shop:8080/oauth2/authorization/google">구글 로그인2</a>
       </div>
       <div>
-        <a href="https://shopforourpets.shop:443/oauth2/authorization/google">구글 로그인3</a>
-        <a href="https://shopforourpets.shop:8080/oauth2/authorization/google">구글 로그인4</a>
+        <a href="https://shopforourpets.shop:8080/oauth2/authorization/naver">naver 로그인</a>
+      </div>
+      <div>
+        <a href="https://shopforourpets.shop:8080/oauth2/authorization/kakao">kakao 로그인</a>
       </div>
       {/* 캐러셀 컴포넌트 */}
       <div className="windowBox">
