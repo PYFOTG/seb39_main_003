@@ -190,15 +190,15 @@ function SignIn() {
                 </div>
             </div>
 
-            {/* <div>
-              <a href='http://211.58.40.128:8080/oauth2/authorization/google'>구글 로그인</a>
+            <div>
+              <a href='https://shopforourpets.shop:8080/oauth2/authorization/google'>구글 로그인</a>
             </div>
             <div>
-              <a href='http://localhost:8080/oauth2/authorization/kakao'>카카오 로그인</a>
+              <a href='https://shopforourpets.shop:8080/oauth2/authorization/kakao'>카카오 로그인</a>
             </div>
             <div>
-              <a href='http://localhost:8080/oauth2/authorization/naver'>네이버 로그인</a>
-            </div> */}
+              <a href='https://shopforourpets.shop:8080/oauth2/authorization/naver'>네이버 로그인</a>
+            </div>
 
 
 
