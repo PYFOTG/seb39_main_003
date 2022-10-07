@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
+import SocialLogin from '../../../components/SocialLogin';
 
 const Wrapper = styled.div`
 box-sizing: border-box;
@@ -131,6 +132,42 @@ function SignIn() {
     })
   }
 
+  // 1번째 방법
+//   useEffect(() => {
+//     fetch(`http://ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google`)
+//     .then((res) => {
+//       const googleAccessToken = res.headers.Authorization;
+
+//       sessionStorage.setItem('googleAccessToken', `${googleAccessToken}`)
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+//   } , [])
+// // 2번째 방법
+//   const googleLogin = () => {
+//   axios.post(`http://ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google`)
+//     .then((res) => {
+//       const googleAccessToken = res.headers.authorization;
+
+//       sessionStorage.setItem('googleAccessToken', `${googleAccessToken}`)
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// }
+// // 3번째 방법
+// const googleLogin2 = () => {
+//   axios.get(`http://ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google`)
+//     .then((res) => {
+//       const googleAccessToken = res.headers.authorization;
+
+//       sessionStorage.setItem('googleAccessToken', `${googleAccessToken}`)
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// }
 
   return (
     <Wrapper>
@@ -164,10 +201,11 @@ function SignIn() {
               <a href='http://localhost:8080/oauth2/authorization/naver'>네이버 로그인</a>
             </div> */}
 
-
-
               {/* 로그인 버튼 */}
               <input className='siButton' type="submit"></input>
+
+              <SocialLogin></SocialLogin>
+
             </form>
           </div>
         </div>

@@ -136,7 +136,7 @@ function Lost() {
   const [lostlist, setLostList] = useState([]);
 
   useEffect(() => {
-    fetch(`http://211.58.40.128:8080/api/v1/board?categoryId=15`, {
+    fetch(`https://shopforourpets.shop:8080/api/v1/board?categoryId=15`, {
       method: "GET",
       headers: {
         "content-Type": "application/json",
@@ -165,7 +165,7 @@ function Lost() {
           <div className="cposttop">
             <span className="cposttext">작성자</span>
             <span className="cposttext">글 제목</span>
-            <span className="cposttext">내용</span>
+            {/* <span className="cposttext">내용</span> */}
           </div>
 
           <div>
@@ -182,7 +182,7 @@ function Lost() {
                     >
                     <span className="article">{el.nickName}</span>
                     <span className="article">{el.title}</span>
-                    <span className="article">{el.boardContent}</span>
+                    {/* <span className="article">{el.boardContent}</span> */}
                   </StyledLink>
                 );
               })}
