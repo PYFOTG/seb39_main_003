@@ -255,7 +255,7 @@ function Order( {convertPrice} ) {
   const base64Payload = realToken.split('.')[1]; //value 0 -> header, 1 -> payload, 2 -> VERIFY SIGNATURE
   const payload = Buffer.from(base64Payload, 'base64'); 
   const result = JSON.parse(payload.toString())
-  // console.log(result);
+  console.log(result);
 
     const [info, setInfo] = useState([]);
     
@@ -264,7 +264,7 @@ function Order( {convertPrice} ) {
       .then(res => res.json())
       .then(res => {
         setInfo(res)
-        console.log(res)
+        // console.log(res)
       })
     } , [])
 
@@ -371,7 +371,7 @@ function Order( {convertPrice} ) {
                 <div className='orderAll' key={idx}>
                   <div className='orderList1'>
                       <span>
-                        <img src={Cat} alt='상품 사진' className='myorderimg'/>
+                        <img src={el.thumbnail} alt='상품 사진' className='myorderimg'/>
                       </span>
                       <span className='myOrderName'>{el.itemName}</span>
                   </div>

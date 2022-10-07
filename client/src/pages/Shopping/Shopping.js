@@ -5,6 +5,9 @@ import Carousel from "nuka-carousel";
 import Image1 from '../../assets/dog1.png';
 import Image2 from '../../assets/dog2.png';
 import Image3 from '../../assets/dog3.png';
+import Image4 from '../../assets/carousel1.png';
+import Image5 from '../../assets/carousel2.png';
+import Image6 from '../../assets/carousel3.jpg';
 import EatDropdown from './EatDropdown';
 import HealthDropdown from './HealthDropdown';
 import OtherDropdown from './OtherDropdown';
@@ -252,9 +255,9 @@ function Shopping( {convertPrice} ) {
       <div className="windowBox">
         <div className="window">
           <Carousel>
-              <img className="flexboxImage" alt="image1" src={Image1} />
-              <img className="flexboxImage" alt="image2" src={Image2} />
-              <img className="flexboxImage" alt="image3"src={Image3} />
+              <img className="flexboxImage" alt="image1" src={Image4} />
+              <img className="flexboxImage" alt="image2" src={Image5} />
+              <img className="flexboxImage" alt="image3"src={Image6} />
           </Carousel>
         </div>
       </div>
@@ -309,7 +312,7 @@ function Shopping( {convertPrice} ) {
 
                     <div className='image'>
                         <div>
-                          <img className='img' src={Cat} alt='사진' />
+                          <img className='img' src={el.thumbnail} alt='사진' />
                         </div>
                     </div>
 

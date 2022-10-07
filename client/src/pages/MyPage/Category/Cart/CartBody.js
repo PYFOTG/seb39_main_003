@@ -95,8 +95,8 @@ const Wrapper = styled.div`
   .type {
     position: relative;
     left: 19rem;
-    padding: 0px 8.2rem;
-    border: 1px solid red;
+    padding: 0px 8rem 0px 17rem;
+    /* border: 1px solid red; */
   }
 
   .checkLine {
@@ -265,7 +265,7 @@ function CartBody( {convertPrice} ) {
                 </div>
 
                 <span>
-                  <img className='listImg' src={Cat} alt="상품 사진" />
+                  <img className='listImg' src={el.thumbnail} alt="상품 사진" />
                 </span>
 
                 <span className='listName itemAll'>{el.itemName}</span>

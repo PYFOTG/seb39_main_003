@@ -186,7 +186,7 @@ function Buy( {convertPrice} ) {
       .then(res => res.json())
       .then(res => {
         setInfo(res)
-        // console.log(res)
+        console.log(res)
       })
     } , [])
 
@@ -203,7 +203,7 @@ function Buy( {convertPrice} ) {
                     <div className='bAd1'>주문 완료 상품</div>
                       {/* <div className='bAd2'>{el.thumbnail}</div> */}
                     <div className='bAd2'>
-                      <img className="img" src={Dog} alt="사진" />
+                      <img className="img" src={el.thumbnail} alt="사진" />
                     </div>
                     <div className='bAd2'>{el.itemName}</div>
                     <div className='bAd2'>{convertPrice(el.totalPrice)} 원</div>

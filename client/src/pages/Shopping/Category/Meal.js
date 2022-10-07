@@ -235,6 +235,7 @@ function Meal( { convertPrice } ) {
   //     }
   //   })
   // }
+  console.log(itemList)
 
   return (
 
@@ -267,7 +268,7 @@ function Meal( { convertPrice } ) {
 
                     <div className='image'>
                         <div>
-                          <img className='img' src={Cat} alt='사진' />
+                          <img className='img' src={el.thumbnail} alt='사진' />
                         </div>
                     </div>
 

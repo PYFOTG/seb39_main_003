@@ -116,7 +116,7 @@ function Wish( {convertPrice} ) {
             return (
                 <div className='wishlistBox' key={idx}>
                     <span>
-                      <img src={Cat} alt='상품 사진' className='img'/>
+                      <img src={el.thumbnail} alt='상품 사진' className='img'/>
                     </span>
                     <span className='wishname'>{el.itemName}</span>
                     <span className='wishprice'>{convertPrice(el.price)} 원</span>

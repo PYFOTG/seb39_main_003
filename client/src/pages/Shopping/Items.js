@@ -355,7 +355,7 @@ function Items( { convertPrice, cart, setCart } ) {
         itemId: itemInfo.itemId,
         name: itemInfo.itemName, 
         price: itemInfo.itemPrice,
-        image: `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${itemInfo.thumbnail}`,
+        image: location.state.thumbnail,
         itemCnt: count,
         memberId: "000001"
       }),
@@ -419,7 +419,7 @@ function Items( { convertPrice, cart, setCart } ) {
     <div className="item_top">
           <>
             <div className="item_imagebox">
-              <img src={Cat}
+              <img src={itemInfo.thumbnail}
                className="itemImage" alt="cat"></img>
             </div>
             
