@@ -100,7 +100,7 @@ function SocialLogin() {
                 <div className='socialLoginText'>간편 로그인</div>
                 {/* 간편로그인 영역2 */}
                 <div className='socialLoginBox'>
-                    <a href='https://shopforourpets.shop:8080/oauth2/authorization/google' className='loginbox1'>
+                    <a href='https://shopforourpets.shop:8080/oauth2/authorization/naver' className='loginbox1'>
                         <div className='icon'>N</div>
                         <div className='textbox'>
                           <div className='text'>네이버 로그인</div>

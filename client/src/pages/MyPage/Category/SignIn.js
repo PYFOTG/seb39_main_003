@@ -191,9 +191,9 @@ function SignIn() {
                 </div>
             </div>
 
-            <div>
+            {/* <div>
               <a href='https://seb39-main-003-jh2mgoy3l-nomga.vercel.app/login'>구글 로그인</a>
-            </div>
+            </div> */}
             {/* <div>
               <a href='http://localhost:8080/oauth2/authorization/kakao'>카카오 로그인</a>
             </div>
