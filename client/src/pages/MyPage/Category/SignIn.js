@@ -106,7 +106,7 @@ function SignIn() {
   
   const { register, handleSubmit } = useForm();
 
-  axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = false;
   
   const onSubmit = (data) => {
 
