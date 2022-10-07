@@ -118,6 +118,7 @@ function SignUp() {
   })
 
     .then(() => {
+      alert('회원가입이 완료되었습니다')
       navigate('/')
     })
     .catch(() => {

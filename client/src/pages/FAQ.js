@@ -147,7 +147,7 @@ console.log(list)
           <div className="faqtop">
             <span className="faqtext">작성자</span>
             <span className="faqtext">제목</span>
-            <span className="faqtext">순번</span>
+            {/* <span className="faqtext">순번</span> */}
             {/* <span className="faqtext">날짜</span> */}
           </div>
 

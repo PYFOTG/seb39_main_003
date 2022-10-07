@@ -128,7 +128,7 @@ function Review( {itemId, memberId} ) {
               <span className='reviews'>{el.nickName}</span>
               <span className='reviews'>{el.reviewContent}</span>
               <span className='reviews heart'><BsFillSuitHeartFill/>
-                <span className='heartCount'>{el.startCnt}</span>
+                {/* <span className='heartCount'>{el.startCnt}</span> */}
               </span>
               <span className='reviews'>{el.createAt}</span>
             </div>

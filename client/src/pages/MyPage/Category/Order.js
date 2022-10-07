@@ -47,7 +47,7 @@ box-sizing: border-box;
   margin: 0px 0px 40px 0px;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .firstRadio {
@@ -209,7 +209,7 @@ box-sizing: border-box;
   }
 
 .addressBox {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-bottom: 2.5rem;
 }
 

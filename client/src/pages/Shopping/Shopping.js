@@ -136,7 +136,7 @@ const Wrapper = styled.div`
   .item_list_box {
     width: 100%;
     height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
