@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import SocialLogin from './SocialLogin';
 
 
 const Wrapper = styled.div`
@@ -109,7 +110,7 @@ function SignIn() {
   
   const onSubmit = (data) => {
 
-    axios.post(`http://211.58.40.128:8080/login`, data)
+    axios.post(`https://shopforourpets.shop:8080/login`, data)
     .then(response => {
       const accessToken = response.headers.authorization;
       const refreshToken = response.headers.refresh;
@@ -130,44 +131,6 @@ function SignIn() {
       alert("이메일 혹은 비밀번호를 확인하세요") ;
     })
   }
-
-
-// 1번째 방법
-//   useEffect(() => {
-//     fetch(`http://ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google`)
-//     .then((res) => {
-//       const googleAccessToken = res.headers.Authorization;
-
-//       sessionStorage.setItem('googleAccessToken', `${googleAccessToken}`)
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//     })
-//   } , [])
-// // 2번째 방법
-//   const googleLogin = () => {
-//   axios.post(`http://ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google`)
-//     .then((res) => {
-//       const googleAccessToken = res.headers.authorization;
-
-//       sessionStorage.setItem('googleAccessToken', `${googleAccessToken}`)
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//     })
-// }
-// // 3번째 방법
-// const googleLogin2 = () => {
-//   axios.get(`http://ec2-15-165-63-80.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google`)
-//     .then((res) => {
-//       const googleAccessToken = res.headers.authorization;
-
-//       sessionStorage.setItem('googleAccessToken', `${googleAccessToken}`)
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//     })
-// }
 
 
   return (
@@ -193,7 +156,7 @@ function SignIn() {
             </div>
 
             {/* <div>
-              <a href='http://211.58.40.128:8080/oauth2/authorization/google'>구글 로그인</a>
+              <a href='https://shopforourpets.shop:8080/oauth2/authorization/google'>구글 로그인</a>
             </div>
             <div>
               <a href='http://localhost:8080/oauth2/authorization/kakao'>카카오 로그인</a>
@@ -202,7 +165,7 @@ function SignIn() {
               <a href='http://localhost:8080/oauth2/authorization/naver'>네이버 로그인</a>
             </div> */}
 
-
+            <SocialLogin></SocialLogin>
 
               {/* 로그인 버튼 */}
               <input className='siButton' type="submit"></input>
