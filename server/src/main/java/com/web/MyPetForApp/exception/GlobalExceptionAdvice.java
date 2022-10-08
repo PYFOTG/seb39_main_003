@@ -4,8 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.HttpRequestmode: 'no-cors', methodNotSupportedException;
+import org.springframework.web.bind.mode: 'no-cors', methodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -19,8 +19,8 @@ import javax.validation.ConstraintViolationException;
 public class GlobalExceptionAdvice {
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResponse handleMethodArgumentNotValidException(
-            MethodArgumentNotValidException e) {
+    public ErrorResponse handlemode: 'no-cors', methodArgumentNotValidException(
+            mode: 'no-cors', methodArgumentNotValidException e) {
         final ErrorResponse response = ErrorResponse.of(e.getBindingResult());
 
         return response;
@@ -36,11 +36,11 @@ public class GlobalExceptionAdvice {
     }
 
     @ExceptionHandler
-    @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
-    public ErrorResponse handleHttpRequestMethodNotSupportedException(
-            HttpRequestMethodNotSupportedException e) {
+    @ResponseStatus(HttpStatus.mode: 'no-cors', method_NOT_ALLOWED)
+    public ErrorResponse handleHttpRequestmode: 'no-cors', methodNotSupportedException(
+            HttpRequestmode: 'no-cors', methodNotSupportedException e) {
 
-        final ErrorResponse response = ErrorResponse.of(HttpStatus.METHOD_NOT_ALLOWED);
+        final ErrorResponse response = ErrorResponse.of(HttpStatus.mode: 'no-cors', method_NOT_ALLOWED);
 
         return response;
     }

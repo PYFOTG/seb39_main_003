@@ -71,8 +71,8 @@ function Review( {itemId, memberId} ) {
   const [comment, setComment] = useState([])
 
   const handleButtonReview = () => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/qna/question`, {
-        method: 'POST',
+    fetch(`http://211.58.40.128:8080/api/v1/qna/question`, {
+        mode: 'no-cors', method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ function Review( {itemId, memberId} ) {
   };
 
   useEffect(() => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/qna/question?itemId=${itemId}&page=1&size=8`)
+    fetch(`http://211.58.40.128:8080/api/v1/qna/question?itemId=${itemId}&page=1&size=8`)
     .then(res => res.json())
     .then(res => {
       setComment(res.data)

@@ -119,8 +119,8 @@ function AddProduct() {
     formData.delete("mainImg");
     formData.append("mainImg", data.mainImg[0]);
 
-    fetch(`http://shopforourpets.shop:8080/api/v1/item`, {
-      method: "POST",
+    fetch(`http://211.58.40.128:8080/api/v1/item`, {
+      mode: 'no-cors', method: "POST",
       body: formData
     })
 

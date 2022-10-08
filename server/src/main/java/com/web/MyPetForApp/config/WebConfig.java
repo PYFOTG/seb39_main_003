@@ -18,6 +18,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .exposedHeaders("Authorization")
                 .exposedHeaders("refresh")
-                .allowedMethods("GET", "POST", "PATCH", "DELETE"); // 허용할 Request 메서드
+                .allowedmode: 'no-cors', methods("GET", "POST", "PATCH", "DELETE"); // 허용할 Request 메서드
     }
 }

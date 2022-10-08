@@ -17,7 +17,7 @@ public class CorsConfig {
 //        config.addAllowedOrigin("http://localhost:3000");
 //        config.addAllowedOrigin("https://seb39-main-003-rjwfp0sdz-main003.vercel.app:3000");
         config.addAllowedHeader("*");
-//        config.addAllowedMethod("*");
+//        config.addAllowedmode: 'no-cors', method("*");
 //        config.addExposedHeader("Authorization");
 //        config.addExposedHeader("refresh");
         source.registerCorsConfiguration("/**", config);

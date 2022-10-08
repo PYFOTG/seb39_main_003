@@ -110,7 +110,12 @@ function SignIn() {
   
   const onSubmit = (data) => {
 
-    axios.post(`http://shopforourpets.shop:8080/login`, data)
+    axios({
+      method: 'post',
+      data: data,
+      mode: 'no-cors',
+      url: 'http://211.58.40.128:8080/login',
+    })
     .then(response => {
       const accessToken = response.headers.authorization;
       const refreshToken = response.headers.refresh;
@@ -156,7 +161,7 @@ function SignIn() {
             </div>
 
             {/* <div>
-              <a href='http://shopforourpets.shop:8080/oauth2/authorization/google'>구글 로그인</a>
+              <a href='http://211.58.40.128:8080/oauth2/authorization/google'>구글 로그인</a>
             </div>
             <div>
               <a href='http://localhost:8080/oauth2/authorization/kakao'>카카오 로그인</a>

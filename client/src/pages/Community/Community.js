@@ -143,8 +143,8 @@ function Community() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/board?categoryId=11`, {
-      method: "GET",
+    fetch(`http://211.58.40.128:8080/api/v1/board?categoryId=11`, {
+      mode: 'no-cors', method: "GET",
       headers: {
         "content-Type": "application/json",
       },

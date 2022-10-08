@@ -330,7 +330,7 @@ function Items( { convertPrice, cart, setCart } ) {
   const [itemInfo, setItemInfo] = useState([])
 
     useEffect(() => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/item/${location.state.id}`)
+    fetch(`http://211.58.40.128:8080/api/v1/item/${location.state.id}`)
     .then((res) => res.json())
     .then(res => {
       setItemInfo(res.data)
@@ -345,8 +345,8 @@ function Items( { convertPrice, cart, setCart } ) {
 
   const handleCart = () => {
 
-    fetch(`http://shopforourpets.shop:8080/api/v1/cart`, {
-      method: 'POST',
+    fetch(`http://211.58.40.128:8080/api/v1/cart`, {
+      mode: 'no-cors', method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -368,8 +368,8 @@ function Items( { convertPrice, cart, setCart } ) {
   };
 
   const handleButtonWish = () => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/wish`, {
-      method: 'POST',
+    fetch(`http://211.58.40.128:8080/api/v1/wish`, {
+      mode: 'no-cors', method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -389,8 +389,8 @@ function Items( { convertPrice, cart, setCart } ) {
   }
 
   const Delete = () => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/item/${itemInfo.itemId}`, {
-      method: 'DELETE'
+    fetch(`http://211.58.40.128:8080/api/v1/item/${itemInfo.itemId}`, {
+      mode: 'no-cors', method: 'DELETE'
     })
     .then(() => {
       navigate('/shopping/meal')

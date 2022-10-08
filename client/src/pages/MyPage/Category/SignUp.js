@@ -112,8 +112,9 @@ function SignUp() {
     formData.delete("multipartFiles");
     formData.append("multipartFiles", data.multipartFiles[0]);
 
-    fetch(`http://shopforourpets.shop:8080/api/v1/member`, {
-    method: "POST",
+    fetch(`http://211.58.40.128:8080/api/v1/member`, {
+      mode: 'no-cors',
+     method: "POST",
     body: formData
   })
 

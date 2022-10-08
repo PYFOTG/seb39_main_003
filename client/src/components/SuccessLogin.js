@@ -199,7 +199,7 @@ const Nav = () => {
     const [info, setInfo] = useState([]);
     
     useEffect(() => {
-      fetch(`http://shopforourpets.shop:8080/api/v1/member/${result.memberId}`)
+      fetch(`http://211.58.40.128:8080/api/v1/member/${result.memberId}`)
       .then(res => res.json())
       .then(res => {
         setInfo(res)

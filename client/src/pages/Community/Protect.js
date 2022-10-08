@@ -148,8 +148,8 @@ function Protect() {
     const [plist, setPList] = useState([]);
 
   useEffect(() => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/board?categoryId=14`, {
-      method: "GET",
+    fetch(`http://211.58.40.128:8080/api/v1/board?categoryId=14`, {
+      mode: 'no-cors', method: "GET",
       headers: {
         "content-Type": "application/json",
       },

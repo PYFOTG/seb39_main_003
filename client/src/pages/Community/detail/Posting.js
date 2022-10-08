@@ -132,8 +132,8 @@ function Posting() {
   };
 
   const postContent = () => {
-    fetch(`http://shopforourpets.shop:8080/api/v1/board`, {
-      method: "POST",
+    fetch(`http://211.58.40.128:8080/api/v1/board`, {
+      mode: 'no-cors', method: "POST",
       headers: {
         "content-Type": "application/json",
       },
