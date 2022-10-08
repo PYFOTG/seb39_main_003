@@ -11,6 +11,7 @@ import QnA from './QnA';
 import Review from './Review';
 import { BsHeart } from "react-icons/bs";
 import { BsHeartFill } from "react-icons/bs";
+import { isHtmlElement } from 'react-router-dom/dist/dom';
 
 
 
@@ -340,6 +341,7 @@ function Items( { convertPrice, cart, setCart } ) {
       console.log(err)
     })
   } , [])
+  console.log(itemInfo)
 
   const final = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${location.state.thumbnail}`
 
@@ -419,7 +421,7 @@ function Items( { convertPrice, cart, setCart } ) {
     <div className="item_top">
           <>
             <div className="item_imagebox">
-              <img src={final} // {final} 로 바꿔야함
+              <img src={itemInfo.thumbnail} // {final} 로 바꿔야함
                className="itemImage" alt="cat"></img>
             </div>
             
