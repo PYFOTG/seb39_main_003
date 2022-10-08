@@ -153,7 +153,7 @@ function CartBody( {convertPrice} ) {
   // const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/cart?memberId=000001&page=1&size=10`)
+    fetch(`http://211.58.40.128:8080/api/v1/cart?memberId=000001&page=1&size=10`)
     .then(res => res.json())
     .then(res => {
       setCartList(res.data)
@@ -180,10 +180,10 @@ function CartBody( {convertPrice} ) {
 
       {cartList && cartList.map((el, idx) => {
         
-      // const Image = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${el.thumbnail}`
+      const Image = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${el.thumbnail}`
 
       const deleteCartItemId = () => {
-        fetch(`https://shopforourpets.shop:8080/api/v1/cart/${el.cartItemId}`, {
+        fetch(`http://211.58.40.128:8080/api/v1/cart/${el.cartItemId}`, {
           method: 'DELETE'
         })
         .then(() => {
@@ -194,7 +194,7 @@ function CartBody( {convertPrice} ) {
         })
       }
       const Plus = (count) => {
-        fetch(`https://shopforourpets.shop:8080/api/v1/cart/${el.cartItemId}`, {
+        fetch(`http://211.58.40.128:8080/api/v1/cart/${el.cartItemId}`, {
           method: 'PATCH',
           headers: {
             "content-type": "application/json",
@@ -210,7 +210,7 @@ function CartBody( {convertPrice} ) {
       }
 
       const Minus = (count) => {
-        fetch(`https://shopforourpets.shop:8080/api/v1/cart/${el.cartItemId}`, {
+        fetch(`http://211.58.40.128:8080/api/v1/cart/${el.cartItemId}`, {
           method: 'PATCH',
           headers: {
             "content-type": "application/json",
@@ -265,7 +265,7 @@ function CartBody( {convertPrice} ) {
                 </div>
 
                 <span>
-                  <img className='listImg' src={Cat} alt="상품 사진" />
+                  <img className='listImg' src={Image} alt="상품 사진" />
                 </span>
 
                 <span className='listName itemAll'>{el.itemName}</span>

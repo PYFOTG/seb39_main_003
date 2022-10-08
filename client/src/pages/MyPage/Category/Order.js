@@ -260,7 +260,7 @@ function Order( {convertPrice} ) {
     const [info, setInfo] = useState([]);
     
     React.useEffect(() => {
-      fetch(`https://shopforourpets.shop:8080/api/v1/member/${result.memberId}`)
+      fetch(`http://211.58.40.128:8080/api/v1/member/${result.memberId}`)
       .then(res => res.json())
       .then(res => {
         setInfo(res)
@@ -286,7 +286,7 @@ function Order( {convertPrice} ) {
     }
 
     const orderItem = () => {
-      fetch(`https://shopforourpets.shop:8080/api/v1/pay`,{
+      fetch(`http://211.58.40.128:8080/api/v1/pay`,{
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -367,11 +367,12 @@ function Order( {convertPrice} ) {
 
             {/* 주문목록 본문 */}
             {orderList && orderList.map((el, idx) => {
+              const final = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${el.thumbnail}`
               return (
                 <div className='orderAll' key={idx}>
                   <div className='orderList1'>
                       <span>
-                        <img src={Cat} alt='상품 사진' className='myorderimg'/>
+                        <img src={final} alt='상품 사진' className='myorderimg'/>
                       </span>
                       <span className='myOrderName'>{el.itemName}</span>
                   </div>

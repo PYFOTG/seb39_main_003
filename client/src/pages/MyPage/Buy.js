@@ -182,7 +182,7 @@ function Buy( {convertPrice} ) {
     const [info, setInfo] = useState([]);
     
     React.useEffect(() => {
-      fetch(`https://shopforourpets.shop:8080/api/v1/member/${result.memberId}`)
+      fetch(`http://211.58.40.128:8080/api/v1/member/${result.memberId}`)
       .then(res => res.json())
       .then(res => {
         setInfo(res)
@@ -194,6 +194,7 @@ function Buy( {convertPrice} ) {
     <Wrapper>
       <div className='buyCompleteText'>주문이 완료 되었습니다</div>
       {checkOrder && checkOrder.map((el, idx) => {
+        const final = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${el.thumbnail}`
         return (
         <div key={idx}>
             <div className='buyBackground'>
@@ -203,7 +204,7 @@ function Buy( {convertPrice} ) {
                     <div className='bAd1'>주문 완료 상품</div>
                       {/* <div className='bAd2'>{el.thumbnail}</div> */}
                     <div className='bAd2'>
-                      <img className="img" src={Dog} alt="사진" />
+                      <img className="img" src={final} alt="사진" />
                     </div>
                     <div className='bAd2'>{el.itemName}</div>
                     <div className='bAd2'>{convertPrice(el.totalPrice)} 원</div>

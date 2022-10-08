@@ -330,7 +330,7 @@ function Items( { convertPrice, cart, setCart } ) {
   const [itemInfo, setItemInfo] = useState([])
 
     useEffect(() => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/item/${location.state.id}`)
+    fetch(`http://211.58.40.128:8080/api/v1/item/${location.state.id}`)
     .then((res) => res.json())
     .then(res => {
       setItemInfo(res.data)
@@ -345,7 +345,7 @@ function Items( { convertPrice, cart, setCart } ) {
 
   const handleCart = () => {
 
-    fetch(`https://shopforourpets.shop:8080/api/v1/cart`, {
+    fetch(`http://211.58.40.128:8080/api/v1/cart`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -368,7 +368,7 @@ function Items( { convertPrice, cart, setCart } ) {
   };
 
   const handleButtonWish = () => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/wish`, {
+    fetch(`http://211.58.40.128:8080/api/v1/wish`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -389,7 +389,7 @@ function Items( { convertPrice, cart, setCart } ) {
   }
 
   const Delete = () => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/item/${itemInfo.itemId}`, {
+    fetch(`http://211.58.40.128:8080/api/v1/item/${itemInfo.itemId}`, {
       method: 'DELETE'
     })
     .then(() => {
@@ -419,7 +419,7 @@ function Items( { convertPrice, cart, setCart } ) {
     <div className="item_top">
           <>
             <div className="item_imagebox">
-              <img src={Cat} // {final} 로 바꿔야함
+              <img src={final} // {final} 로 바꿔야함
                className="itemImage" alt="cat"></img>
             </div>
             

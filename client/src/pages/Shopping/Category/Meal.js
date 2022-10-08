@@ -194,7 +194,7 @@ function Meal( { convertPrice } ) {
   const [itemList, setItemList] = useState(undefined);
   
     useEffect(() => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/item?itemCategoryId=11`)
+    fetch(`http://211.58.40.128:8080/api/v1/item?itemCategoryId=11`)
     .then((res) => res.json())
     .then(res => {
       setItemList(res.data)
@@ -255,7 +255,7 @@ function Meal( { convertPrice } ) {
 
       <div className="item_list_box">
             {itemList && itemList.map((el, idx) => {
-                // const final = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${el.thumbnail}`
+                const final = `https://mypet-imaga.s3.ap-northeast-2.amazonaws.com/items/${el.thumbnail}`
               return (
                 
                 <ListLink to={`/shopping/item/${el.itemId}`} key={idx} className='item_box' state={
@@ -267,7 +267,7 @@ function Meal( { convertPrice } ) {
 
                     <div className='image'>
                         <div>
-                          <img className='img' src={Cat} alt='사진' />
+                          <img className='img' src={final} alt='사진' />
                         </div>
                     </div>
 

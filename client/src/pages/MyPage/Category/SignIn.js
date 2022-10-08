@@ -106,11 +106,12 @@ function SignIn() {
   
   const { register, handleSubmit } = useForm();
 
-  axios.defaults.withCredentials = false;
+  axios.defaults.withCredentials = true;
   
   const onSubmit = (data) => {
 
-    axios.post(`https://seb39-main-003-jh2mgoy3l-nomga.vercel.app/login`, data)
+    axios.post(`https://shopforourpets.shop:8080/login`, data)
+    
     .then(response => {
       const accessToken = response.headers.authorization;
       const refreshToken = response.headers.refresh;
@@ -192,7 +193,7 @@ function SignIn() {
             </div>
 
             {/* <div>
-              <a href='https://seb39-main-003-jh2mgoy3l-nomga.vercel.app/login'>구글 로그인</a>
+              <a href='https://shopforourpets.shop:8080/login'>구글 로그인</a>
             </div> */}
             {/* <div>
               <a href='http://localhost:8080/oauth2/authorization/kakao'>카카오 로그인</a>
