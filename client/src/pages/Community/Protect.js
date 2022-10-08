@@ -148,7 +148,7 @@ function Protect() {
     const [plist, setPList] = useState([]);
 
   useEffect(() => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/board?categoryId=14`, {
+    fetch(`http://shopforourpets.shop:8080/api/v1/board?categoryId=14`, {
       method: "GET",
       headers: {
         "content-Type": "application/json",

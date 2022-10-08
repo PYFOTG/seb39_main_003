@@ -173,7 +173,7 @@ function Main() {
   // const [info, setInfo] = useState([]);
 
   // useEffect(() => {
-  //   fetch(`https://shopforourpets.shop:8080/api/v1/member/$%7Bresult.memberId%7D%60`)
+  //   fetch(`http://shopforourpets.shop:8080/api/v1/member/$%7Bresult.memberId%7D%60`)
   //     .then((res) => res.json())
   //     .then((res) => {
   //       setInfo(res);

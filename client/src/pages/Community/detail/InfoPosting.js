@@ -123,7 +123,7 @@ function InfoPosting() {
   };
 
   const postContent = () => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/board`, {
+    fetch(`http://shopforourpets.shop:8080/api/v1/board`, {
       method: "POST",
       headers: {
         "content-Type": "application/json",

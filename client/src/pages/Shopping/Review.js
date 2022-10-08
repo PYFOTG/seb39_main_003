@@ -73,7 +73,7 @@ function Review( {itemId, memberId} ) {
   
   
   const handleButtonReview = () => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/review`, {
+    fetch(`http://shopforourpets.shop:8080/api/v1/review`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -104,7 +104,7 @@ function Review( {itemId, memberId} ) {
   };
   
   useEffect(() => {
-    fetch(`https://shopforourpets.shop:8080/api/v1/review?itemId=${itemId}&page=1&size=8`)
+    fetch(`http://shopforourpets.shop:8080/api/v1/review?itemId=${itemId}&page=1&size=8`)
     .then(res => res.json())
     .then(res => {
       setComment(res.data)
