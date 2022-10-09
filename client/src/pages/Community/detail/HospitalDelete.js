@@ -35,8 +35,7 @@ const Wrapper = styled.div`
     font-weight: 600;
   }
 }`;
-
-function FAQDelete() {
+function HospitalDelete() {
   const [faqlist, setFaqList] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
@@ -50,11 +49,11 @@ function FAQDelete() {
       },
       body: JSON.stringify({
         memberId: "000001",
-        categoryId: 31,
+        categoryId: 13,
       }),
     })
       .then(() => {
-        window.location.assign('/FAQ');
+        window.location.assign('/community/hospital');
       })
       .catch(() => {
         console.log("실패");
@@ -67,7 +66,7 @@ function FAQDelete() {
         <button className="deleteButton" onClick={deleteContent}>게시글 삭제</button>
       </div>
     </Wrapper>
-  );
+  )
 }
 
-export default FAQDelete;
+export default HospitalDelete

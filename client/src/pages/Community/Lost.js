@@ -137,7 +137,7 @@ function Lost() {
 
   useEffect(() => {
     fetch(`http://211.58.40.128:8080/api/v1/board?categoryId=15`, {
-      mode: 'no-cors', method: "GET",
+      method: "GET",
       headers: {
         "content-Type": "application/json",
       },

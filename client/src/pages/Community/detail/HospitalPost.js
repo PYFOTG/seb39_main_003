@@ -3,6 +3,7 @@ import React from "react";
 import Reply from "./Reply";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
+import HospitalDelete from "./HospitalDelete";
 
 const Wrapper = styled.div`
   //게시글 확인 화면
@@ -88,6 +89,7 @@ function HospitalPost() {
               <span className="article">{hList.boardContents}</span>
           </div>
 
+          <HospitalDelete boardId={location.state.id}></HospitalDelete>
           {/* 댓글 작성란 및 작성된 댓글 목록 */}
           <Reply boardId={location.state.id}/>
         </div>

@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Wrapper = styled.div`
-.deleteBackground{
+  .deleteBackground {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-
-}
-.deleteButton{
+  }
+  .deleteButton {
     width: 20%;
 
     padding: 5px;
@@ -30,16 +28,16 @@ const Wrapper = styled.div`
     font-weight: bold;
 
     &:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    color: black;
-    font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      color: black;
+      font-weight: 600;
+    }
   }
-}`;
+`;
 
-function FAQDelete() {
+function LostDelete() {
   const [faqlist, setFaqList] = useState([]);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const deleteContent = () => {
     fetch(`http://211.58.40.128:8080/api/v1/board/${location.state.id}`, {
@@ -50,11 +48,11 @@ function FAQDelete() {
       },
       body: JSON.stringify({
         memberId: "000001",
-        categoryId: 31,
+        categoryId: 15,
       }),
     })
       .then(() => {
-        window.location.assign('/FAQ');
+        window.location.assign("/community/lost");
       })
       .catch(() => {
         console.log("실패");
@@ -64,10 +62,12 @@ function FAQDelete() {
   return (
     <Wrapper>
       <div className="deleteBackground">
-        <button className="deleteButton" onClick={deleteContent}>게시글 삭제</button>
+        <button className="deleteButton" onClick={deleteContent}>
+          게시글 삭제
+        </button>
       </div>
     </Wrapper>
   );
 }
 
-export default FAQDelete;
+export default LostDelete;

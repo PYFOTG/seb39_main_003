@@ -143,8 +143,6 @@ function Notice() {
           <div className="ntop">
             <span className="ntext">작성자</span>
             <span className="ntext">제목</span>
-            <span className="ntext">순번</span>
-            {/* <span className="ntext">날짜</span> */}
           </div>
 
           {/* <div> */}
