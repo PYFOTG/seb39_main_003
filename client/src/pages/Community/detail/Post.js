@@ -4,6 +4,7 @@ import Reply from "./Reply";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
+// import PostDelete from "./PostDelete";
 
 const Wrapper = styled.div`
   //게시글 확인 화면
