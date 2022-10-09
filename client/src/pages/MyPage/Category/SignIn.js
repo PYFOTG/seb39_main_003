@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 
 
+
 const Wrapper = styled.div`
 box-sizing: border-box;
 // 로그인 페이지
@@ -138,7 +139,6 @@ function SignIn() {
       alert("이메일 혹은 비밀번호를 확인하세요") ;
     })
   }
-
 
   return (
     <Wrapper>

@@ -127,7 +127,7 @@ export default function Reply({ boardId }) {
 
   const postReply = () => {
     fetch(`http://211.58.40.128:8080/api/v1/comment`, {
-      mode: 'no-cors', method: "POST",
+      method: "POST",
       headers: {
         "content-Type": "application/json",
       },

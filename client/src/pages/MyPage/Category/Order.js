@@ -287,7 +287,7 @@ function Order( {convertPrice} ) {
 
     const orderItem = () => {
       fetch(`http://211.58.40.128:8080/api/v1/pay`,{
-        mode: 'no-cors', method: 'POST',
+        method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           amount: totalPrice,

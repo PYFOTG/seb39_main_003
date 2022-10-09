@@ -153,15 +153,27 @@ const StyledLink = styled(Link)`
 
 function Main() {
 
-  // let test = window.location.search;
-  // console.log(test);
+  // useEffect(() => {
+    let test = window.location.search;
+    console.log(test);
 
-  // let param = new URLSearchParams(test);
-  // let access = param.get("access_token");
+    let param = new URLSearchParams(test);
+    console.log(param);
 
-  // console.log(access);
+    let access = param.get("access_token");
+    console.log(access);
 
-  // sessionStorage.setItem("accessToken", `${access}`)
+    if(access !== null) {
+      sessionStorage.setItem("accessToken", `${access}`)
+      document.location.href = '/'
+    }
+
+    // ** 로그인 랜딩 페이지 사용 권장 **
+
+    // else {
+    //   sessionStorage.removeItem("accessToken");
+    // }
+  // }, []);
 
   // window.Buffer = window.Buffer || require("buffer").Buffer;
 

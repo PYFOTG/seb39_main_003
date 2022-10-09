@@ -184,7 +184,7 @@ function CartBody( {convertPrice} ) {
 
       const deleteCartItemId = () => {
         fetch(`http://211.58.40.128:8080/api/v1/cart/${el.cartItemId}`, {
-          mode: 'no-cors', method: 'DELETE'
+          method: 'DELETE'
         })
         .then(() => {
           window.location.reload('/mypage/cart')
@@ -195,7 +195,7 @@ function CartBody( {convertPrice} ) {
       }
       const Plus = (count) => {
         fetch(`http://211.58.40.128:8080/api/v1/cart/${el.cartItemId}`, {
-          mode: 'no-cors', method: 'PATCH',
+          method: 'PATCH',
           headers: {
             "content-type": "application/json",
             "accept": "application/json"
@@ -211,7 +211,7 @@ function CartBody( {convertPrice} ) {
 
       const Minus = (count) => {
         fetch(`http://211.58.40.128:8080/api/v1/cart/${el.cartItemId}`, {
-          mode: 'no-cors', method: 'PATCH',
+          method: 'PATCH',
           headers: {
             "content-type": "application/json",
             "accept": "application/json"

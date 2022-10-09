@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import { BiTrash } from "react-icons/bi";
+
 
 
 
@@ -70,11 +72,21 @@ function Review( {itemId, memberId} ) {
 
   const [write, setWrite] = useState("")
   const [comment, setComment] = useState([])
+  const [reviewList, setReviewList] = useState([])
+
+  useEffect(() => {
+    fetch(`http://211.58.40.128:8080/api/v1/review?itemId=${itemId}&page=1&size=8`)
+      .then(res => res.json())
+      .then(res => {
+        setReviewList(res.data)
+        console.log(res.data)
+      })
+    }, [])
   
   
   const handleButtonReview = () => {
     fetch(`http://211.58.40.128:8080/api/v1/review`, {
-      mode: 'no-cors', method: 'POST',
+      method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -112,7 +124,24 @@ function Review( {itemId, memberId} ) {
     })
     .catch(err => console.log(err))
   }, [itemId])
-  
+
+
+
+  const Delete = () => {
+    fetch(`http://211.58.40.128:8080/api/v1/review/${reviewList.reviewId}`, {
+     method: 'DELETE'
+    })
+    .then(() => {
+      window.location.reload();
+    })
+    .catch(() => {
+      alert('실패')
+    })
+  }
+     
+    
+
+
   return (
 
     <Wrapper>
@@ -127,10 +156,15 @@ function Review( {itemId, memberId} ) {
             <div className='reviewBox' key={idx}>
               <span className='reviews'>{el.nickName}</span>
               <span className='reviews'>{el.reviewContent}</span>
-              <span className='reviews heart'><BsFillSuitHeartFill/>
+              <span className='reviews heart'>
+                ⭐️
+                ⭐️
+                ⭐️
+                ⭐️
                 {/* <span className='heartCount'>{el.startCnt}</span> */}
               </span>
               <span className='reviews'>{el.createAt}</span>
+              <span className='delete' onClick={Delete}><BiTrash /></span>
             </div>
           )
         })}

@@ -346,7 +346,7 @@ function Items( { convertPrice, cart, setCart } ) {
   const handleCart = () => {
 
     fetch(`http://211.58.40.128:8080/api/v1/cart`, {
-      mode: 'no-cors', method: 'POST',
+      method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -369,7 +369,7 @@ function Items( { convertPrice, cart, setCart } ) {
 
   const handleButtonWish = () => {
     fetch(`http://211.58.40.128:8080/api/v1/wish`, {
-      mode: 'no-cors', method: 'POST',
+      method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

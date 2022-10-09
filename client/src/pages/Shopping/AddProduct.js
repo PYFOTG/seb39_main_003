@@ -111,7 +111,7 @@ function AddProduct() {
 
   const { register, handleSubmit } = useForm();
   
-  const Token = sessionStorage.getItem('accessToken')
+  // const Token = sessionStorage.getItem('accessToken')
 
 
   const onSubmit = (data) => {
@@ -123,16 +123,13 @@ function AddProduct() {
     formData.append("mainImg", data.mainImg[0]);
 
     fetch(`http://211.58.40.128:8080/api/v1/item`, {
-      mode: 'no-cors', method: "POST",
-      headers: {
-        Authorization: Token
-      },
+      method: "POST",
       body: formData
     })
 
       .then(() => {
         navigate('/shopping/meal')
-        window.location.reload();
+        // window.location.reload();
       })
       .catch(() => {
         console.log("오류남 다시하셈")

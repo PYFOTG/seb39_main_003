@@ -72,7 +72,7 @@ function Review( {itemId, memberId} ) {
 
   const handleButtonReview = () => {
     fetch(`http://211.58.40.128:8080/api/v1/qna/question`, {
-        mode: 'no-cors', method: 'POST',
+        method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

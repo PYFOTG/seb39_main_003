@@ -113,7 +113,7 @@ function SignUp() {
     formData.append("multipartFiles", data.multipartFiles[0]);
 
     fetch(`http://211.58.40.128:8080/api/v1/member`, {
-    mode: 'no-cors', method: "PATCH",
+    method: "PATCH",
     body: formData
   })
 

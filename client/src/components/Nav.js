@@ -215,6 +215,8 @@ const MyPage = styled(Link)`
 
 const Nav = () => {
 
+  console.log("Nav")
+
   const navigate = useNavigate();
 
   const [display, setDisplay] = useState(false);
