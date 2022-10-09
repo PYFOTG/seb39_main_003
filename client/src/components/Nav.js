@@ -215,7 +215,7 @@ const MyPage = styled(Link)`
 
 const Nav = () => {
 
-  console.log("Nav")
+  // console.log("Nav")
 
   const navigate = useNavigate();
 

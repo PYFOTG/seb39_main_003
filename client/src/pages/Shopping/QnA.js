@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import { BsFillSuitHeartFill } from "react-icons/bs";
-
-
+import { BiTrash } from "react-icons/bi";
 
 const Wrapper = styled.div`
 
@@ -69,6 +68,7 @@ function Review( {itemId, memberId} ) {
   // const [title, setTitle] = useState("")
   const [write, setWrite] = useState("")
   const [comment, setComment] = useState([])
+  // console.log(comment)
 
   const handleButtonReview = () => {
     fetch(`http://211.58.40.128:8080/api/v1/qna/question`, {
@@ -90,7 +90,7 @@ function Review( {itemId, memberId} ) {
         setWrite("")
       })
       .then(() => {
-        // window.location.reload();
+        window.location.reload();
       })
       .catch(err => console.log(err))
   }
@@ -104,7 +104,7 @@ function Review( {itemId, memberId} ) {
     .then(res => res.json())
     .then(res => {
       setComment(res.data)
-      console.log(res.data)
+      // console.log(res.data)
     })
     .catch(err => console.log(err))
   }, [])
@@ -119,11 +119,24 @@ function Review( {itemId, memberId} ) {
         </div>
 
         {comment && comment.map((el, idx) => {
+          const Delete = () => {
+            fetch(`http://211.58.40.128:8080/api/v1/qna/question/${el.questionId}`, {
+             method: 'DELETE'
+            })
+            .then(() => {
+              alert('질문이 삭제되었습니다.')
+              window.location.reload();
+            })
+            .catch(() => {
+              alert('실패')
+            })
+          }
           return (
             <div className='reviewBox' key={idx}>
               <span className='reviews'>{el.nickName}</span>
               <span className='reviews'>{el.questionContent}</span>
               <span className='reviews'>{el.createAt}</span>
+              <span className='delete' onClick={Delete}><BiTrash /></span>
             </div>
           )
         })}

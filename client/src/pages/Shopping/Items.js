@@ -317,7 +317,7 @@ const Wrapper = styled.div`
 
 function Items( { convertPrice, cart, setCart } ) {
 
-  const [change, setChange] = useState("");
+  const [change, setChange] = useState("리뷰");
   const navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState({});
@@ -325,7 +325,7 @@ function Items( { convertPrice, cart, setCart } ) {
   const [clickHeart, setClickHeart] = useState(false)
 
   const location = useLocation();
-  console.log(location)
+  // console.log(location)
 
   const [itemInfo, setItemInfo] = useState([])
 
@@ -334,7 +334,7 @@ function Items( { convertPrice, cart, setCart } ) {
     .then((res) => res.json())
     .then(res => {
       setItemInfo(res.data)
-      console.log(res.data)
+      // console.log(res.data)
     })
     .catch((err) => {
       console.log(err)

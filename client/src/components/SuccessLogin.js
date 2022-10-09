@@ -184,7 +184,7 @@ const StyledLink = styled(Link)`
 
 const Nav = () => {
 
-  console.log("success log")
+  // console.log("success log")
 
   const token = sessionStorage.getItem('accessToken');
   const realToken = token.slice(7)

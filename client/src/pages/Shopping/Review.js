@@ -73,13 +73,14 @@ function Review( {itemId, memberId} ) {
   const [write, setWrite] = useState("")
   const [comment, setComment] = useState([])
   const [reviewList, setReviewList] = useState([])
+  // console.log(reviewList)
 
   useEffect(() => {
     fetch(`http://211.58.40.128:8080/api/v1/review?itemId=${itemId}&page=1&size=8`)
       .then(res => res.json())
       .then(res => {
         setReviewList(res.data)
-        console.log(res.data)
+        // console.log(res.data)
       })
     }, [])
   
@@ -123,21 +124,22 @@ function Review( {itemId, memberId} ) {
       // console.log(res.data)
     })
     .catch(err => console.log(err))
-  }, [itemId])
+  }, [])
 
 
 
-  const Delete = () => {
-    fetch(`http://211.58.40.128:8080/api/v1/review/${reviewList.reviewId}`, {
-     method: 'DELETE'
-    })
-    .then(() => {
-      window.location.reload();
-    })
-    .catch(() => {
-      alert('실패')
-    })
-  }
+    // useEffect(() => {
+    // fetch(`http://211.58.40.128:8080/api/v1/review/${itemId}`)
+    // .then((res) => {
+    //   setReviewList(res.data)
+    //   window.location.reload();
+    // })
+    // .catch(() => {
+    //   alert('실패')
+    // })
+    // }, [])
+
+
      
     
 
@@ -152,11 +154,25 @@ function Review( {itemId, memberId} ) {
         </div>
 
         {comment && comment.map((el, idx) => {
+
+          const Delete = () => {
+            fetch(`http://211.58.40.128:8080/api/v1/review/${el.reviewId}`, {
+            method: 'DELETE'
+            })
+            .then(() => {
+              alert('리뷰가 삭제되었습니다.')
+              window.location.reload();
+            })
+            .catch(() => {
+              alert('실패')
+            })
+          }
           return (
             <div className='reviewBox' key={idx}>
               <span className='reviews'>{el.nickName}</span>
               <span className='reviews'>{el.reviewContent}</span>
               <span className='reviews heart'>
+                ⭐️
                 ⭐️
                 ⭐️
                 ⭐️
