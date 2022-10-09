@@ -13,6 +13,11 @@ on:
   pull_request:
     branches: [ "dev" ]
   
+env:
+  S3_BUCKET_NAME: mypet-cicd
+  CODE_DEPLOY_APPLICATION_NAME: mypet-codedeploy
+  CODE_DEPLOY_GROUP_NAME: mypet-deploy-group
+  DEPLOY_ZIP_FILE: mypet-deploy.zip 
 
 permissions:
   contents: read
@@ -41,7 +46,7 @@ jobs:
       run: rm -rf ./*.jar
       
     - name: Make Zip File
-      run: zip -r ./mypet-deploy.zip .
+      run: zip -r ./$DEPLOY_ZIP_FILE .
       
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -51,11 +56,12 @@ jobs:
         aws-region: ap-northeast-2
       
     - name: Upload To S3
-      run: aws s3 cp --region ap-northeast-2 ./mypet-deploy.zip s3://mypet-cicd/mypet-deploy.zip
+      run: aws s3 cp --region ap-northeast-2 ./$DEPLOY_ZIP_FILE s3://$S3_BUCKET_NAME/$DEPLOY_ZIP_FILE
 
     - name: Code Deploy
       run: >
-        aws deploy create-deployment --application-name mypet-codedeploy
+        aws deploy create-deployment
+        --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }}
         --deployment-config-name CodeDeployDefault.AllAtOnce
-        --deployment-group-name mypet-deploy-group
-        --s3-location bucket=mypet-cicd,bundleType=zip,key=mypet-deploy.zip
+        --deployment-group-name ${{ env.CODE_DEPLOY_GROUP_NAME }}
+        --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$DEPLOY_ZIP_FILE
