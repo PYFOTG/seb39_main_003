@@ -122,25 +122,26 @@ function FAQPost() {
     setContent(e.target.value);
   };
 
-  const Token = sessionStorage.getItem('accessToken')
-  console.log(Token)
+  // const Token = sessionStorage.getItem('accessToken')
+  // console.log(Token)
 
   const postContent = () => {
     fetch(`http://211.58.40.128:8080/api/v1/board`, {
+
       method: "POST",
       headers: {
-        "Authorization" : Token,
-        "content-Type": "application/json",
+        // 'Authorization' : Token,
+        'content-Type': 'application/json',
       },
       body: JSON.stringify({
-        "title" : title,
-        "boardContents" : content,
-        "memberId" : "000001",
-        "categoryId" : 31
+        'title' : title,
+        'boardContents' : content,
+        'memberId' : '000001',
+        'categoryId' : 31
       }),
     })
       .then(() => {
-        // navigate(`/FAQ`);
+        navigate(`/FAQ`);
       })
       .catch(() => {
         console.log("실패");

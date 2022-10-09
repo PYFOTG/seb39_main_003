@@ -163,8 +163,12 @@ function Main() {
     let access = param.get("access_token");
     console.log(access);
 
+    let refresh = param.get("refresh_token");
+    console.log(access);
+
     if(access !== null) {
       sessionStorage.setItem("accessToken", `${access}`)
+      sessionStorage.setItem("refreshToken", `${refresh}`)
       document.location.href = '/'
     }
 
