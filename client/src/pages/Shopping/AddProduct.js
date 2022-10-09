@@ -110,6 +110,9 @@ function AddProduct() {
   const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
+  
+  const Token = sessionStorage.getItem('accessToken')
+
 
   const onSubmit = (data) => {
     const formData = new FormData();
@@ -121,6 +124,9 @@ function AddProduct() {
 
     fetch(`http://211.58.40.128:8080/api/v1/item`, {
       mode: 'no-cors', method: "POST",
+      headers: {
+        Authorization: Token
+      },
       body: formData
     })
 

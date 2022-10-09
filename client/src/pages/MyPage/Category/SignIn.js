@@ -123,6 +123,8 @@ function SignIn() {
       // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
       axios.defaults.headers.common['Authorization'] = `${accessToken}`;
       axios.defaults.headers.common['Authorization'] = `${refreshToken}`;
+      // fetch.defaults.headers.common['Authorization'] = `${accessToken}`;
+      // fetch.defaults.headers.common['Authorization'] = `${refreshToken}`;
       
       sessionStorage.setItem('accessToken', `${accessToken}`);
       sessionStorage.setItem('refreshToken', `${refreshToken}`);

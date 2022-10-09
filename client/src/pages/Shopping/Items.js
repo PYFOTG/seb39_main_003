@@ -390,7 +390,7 @@ function Items( { convertPrice, cart, setCart } ) {
 
   const Delete = () => {
     fetch(`http://211.58.40.128:8080/api/v1/item/${itemInfo.itemId}`, {
-      mode: 'no-cors', method: 'DELETE'
+     method: 'DELETE'
     })
     .then(() => {
       navigate('/shopping/meal')
